@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <ul>
+        <li><a href="welcome.html">Welcome Page</a></li>
+        <li><a href="login.html">Login Page</a></li>
+        <li><a href="welcome.html">Support Page</a></li>
+        <li><a href="signup.html">Signup Page</a></li>
+
+    </ul>
+    <h1>Sign Up</h1>
+    <div class="loginform" id="loginform">
+        <form action="signup.php" method="post">
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname" required placeholder="First Name"><br>
+        
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" name="lname" required placeholder="Last Name"><br>
+        
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required placeholder="Email Address"><br>
+        
+            <label for="company">Company</label><br>
+            <input type="text" id="company" name="company" required placeholder="Company"><br>
+
+            <label for="position">Position</label><br>
+            <input type="text" id="position" name="position" required placeholder="Position/Role"><br>
+        
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required placeholder="Password"><br>
+        
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
