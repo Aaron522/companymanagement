@@ -10,6 +10,7 @@ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERV
 $firstname = $_POST['fname'];
 $lastname = $_POST['lname'];
 $company = $_POST['company'];
+$position = $_POST['position'];
 $formpassword = $_POST['password'];
 $email = $_POST['email'];
 
@@ -28,16 +29,12 @@ if ($result->num_rows > 0) {
     die("This email already exists");
 }
 $stmt->close();
-$hashpass = password_hash($password, PASSWORD_BCRYPT);
+$hashpass = password_hash($formpassword, PASSWORD_BCRYPT);
 $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, company, position, passwordd) VALUES (?,?,?,?,?,?)");
 $stmt->bind_param("ssssss", $firstname, $lastname, $email, $company, $position, $hashpass);
 $stmt->execute();
-$result = $stmt->get_result();
-if ($result->num_rows > 0)
-{
-    echo "Successfully signed up, please now login";
-}
-
+echo "Email has been added";
+header('Location: login.html');
 
 
 
